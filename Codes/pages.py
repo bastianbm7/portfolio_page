@@ -7,25 +7,25 @@ import pandas as pd
 import numpy as np
 
 import json
+import requests
 
 from Codes import constant
     
-
-def open_lottie(filename, key, height= 120, width = 120):
+def open_lottie(raw_url, key, height= 120, width = 120):
     """
     Function to open and display an lottie file saved
     as json in lottie_files directory.
     """
     
-    # Path of lottie file
-    path = f"lottie_files\\{filename}"
-    
-    # Open lottie file
-    with open(path,"r") as file: 
-        url = json.load(file) 
-    
+    # Send an HTTP GET request to the provided raw URL on GitHub
+    response = requests.get(raw_url)
+        
+    # Load the JSON data
+    lottie_data = response.json()
+            
+            
     # Display lottie fig
-    st_lottie(url, 
+    st_lottie(lottie_data, 
         height=height, 
         width=width, 
         speed=0.8, 
@@ -114,7 +114,7 @@ def page_home():
     
     # Lottie file
     with col2:
-        open_lottie('statistics.json', 'stats', 300, 350)
+        open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/statistics.json', 'stats', 300, 350)
         
 
 # ------------------------
@@ -151,7 +151,7 @@ def page_skills():
         col1.markdown(constant.skills["Python"])     
         # Lottie file in column 2
         with col2:
-            open_lottie('python-2.json', 'python', 250, 250)
+            open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/python-2.json', 'python', 250, 250)
         
         st.divider()
         
@@ -165,7 +165,7 @@ def page_skills():
         
         # Lottie file in column 2
         with col2:
-            open_lottie('r-5.json', 'r', 250, 250)
+            open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/r-5.json', 'r', 250, 250)
         
         st.divider()
         
@@ -178,7 +178,7 @@ def page_skills():
         col1.markdown(constant.skills["Tableau"])     
         # Lottie file in column 2
         with col2:
-            open_lottie('tableau.json', 'tableau', 250, 250)
+            open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/tableau.json', 'tableau', 250, 250)
         
         st.divider()
         
@@ -190,7 +190,7 @@ def page_skills():
         col1.markdown(constant.skills["Mysql"])     
         # Lottie file in column 2
         with col2:
-            open_lottie('mysql.json', 'mysql', 250, 250)
+            open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/mysql.json', 'mysql', 250, 250)
         
         st.divider()
 
@@ -202,7 +202,7 @@ def page_skills():
         col1.markdown(constant.skills["Github"])     
         # Lottie file in column 2
         with col2:
-            open_lottie('github.json', 'github', 250, 250)
+            open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/github.json', 'github', 250, 250)
             
         st.divider()
         
@@ -214,7 +214,7 @@ def page_skills():
         col1.markdown(constant.skills["Excel"])     
         # Lottie file in column 2
         with col2:
-            open_lottie('microsoft-excel.json', 'excel', 250, 250)
+            open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/microsoft-excel.json', 'excel', 250, 250)
         
         
 # ------------------------
@@ -408,7 +408,7 @@ def bottom_page():
     # Write in web scrapping column ----
     with col1:
         # Open lottie file
-        open_lottie('web-scrapping.json', 'webscrapping', 80, 80)
+        open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/web-scrapping.json', 'webscrapping', 80, 80)
         
         # Write title
         st.markdown("**Web Scrapping**")
@@ -417,7 +417,7 @@ def bottom_page():
     # Write in Data Analyst Process column ----
     with col2:
         # Open lottie file
-        open_lottie('data-analyst.json', 'datanalyst', 80, 80)
+        open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/data-analyst.json', 'datanalyst', 80, 80)
         
         # Write title
         st.markdown("**Data Analyst Process**")
@@ -426,7 +426,7 @@ def bottom_page():
     # Write in Statistical Methods column ----
     with col3:
         # Open lottie file
-        open_lottie('stats.json', 'stats2', 80, 80)
+        open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/stats.json', 'stats2', 80, 80)
         
         # Write title
         st.markdown("**Statistical Methods**")
@@ -435,7 +435,7 @@ def bottom_page():
     # Write in Machine Learning Services column ----
     with col4:
         # Open lottie file
-        open_lottie('machine-learning.json', 'machinelearning', 80, 80)
+        open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/machine-learning.json', 'machinelearning', 80, 80)
         
         # Write title
         st.markdown("**Machine Learning Services**")
@@ -444,7 +444,7 @@ def bottom_page():
     # Write in Data Vizualization column ----
     with col5:
         # Open lottie file
-        open_lottie('data-vizualization.json', 'dataviz', 80, 80)
+        open_lottie('https://raw.githubusercontent.com/bastianbm7/portfolio_page/main/lottie_files/data-vizualization.json', 'dataviz', 80, 80)
         
         # Write title
         st.markdown("**Data Vizualization**")
