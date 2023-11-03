@@ -67,7 +67,15 @@ skills = {
 # ---- Text of projects section ----
 
 projects = {
+# Publications projects text ---
+"Cross_correlation": """ ### On asymmetric relations and robustified cross-correlation approach to surveillance based on detection of SARS-CoV-2 in wastewater in Chile and Peru
 
+We conduct statistical analysis of correlations for pre-alert system of the infection in population by wastewater screening of SARS-CoV-2 genomic fragments using qRT-PCR. We analyze data on surveillance of SARS-CoV-2 in wastewater as an epidemiological tool to anticipate outbreaks in Chile and Peru. We found there exists a positive relationship between genomic copies in wastewater and reported cases, and the relationship is of probabilistic nature.
+
+[Link to the publication](https://www.sciencedirect.com/science/article/abs/pii/S016974392300237X?dgcid=author})
+
+"""
+    
 # Machine Learning projects text ----
 "Angine": """ ### Predicting Angina Presence: A Comparative Analysis of Classification Models
 This project focuses on utilizing machine learning techniques to predict the presence of exercise-induced angina in patients with heart disease. We will evaluate and compare the performance of five classification models: Logistic Regression, Naive Bayes, Support Vector Classifier (SVC), Linear Discriminant Analysis (LDA), and Quadratic Discriminant Analysis (QDA). The objective is to identify the most effective model in predicting angina, with potential implications for enhancing the diagnosis and treatment of cardiac patients.

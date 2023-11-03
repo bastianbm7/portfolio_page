@@ -260,12 +260,17 @@ def page_proyects():
     st.markdown('# 📝 Projects')
     
     # Create 3 tabs with the different cathegories of the projects
-    tab1, tab2, tab3 = st.tabs(["Machine Learning", 
+    tab1, tab2, tab3, tab4 = st.tabs(["Publications", 
+                                      "Machine Learning", 
                                 "Data Science & Data Analytics", 
                                 "University"])
-
-    # ---- Machine Learning projects ----
+    
+    # ---- Publications projects ----
     with tab1:
+        st.markdown(constant.projects['Cross_correlation'])
+    
+    # ---- Machine Learning projects ----
+    with tab2:
         #  Hand gesture model ---- 
         
         # Text from constant file
@@ -300,7 +305,7 @@ def page_proyects():
                                '**Status: Finished**')
     
     # ---- Data Science & Data Analytics projects ----
-    with tab2:
+    with tab3:
         # Scrap upWork Page ----
         st.markdown(constant.projects['upWork'])
         
@@ -341,7 +346,7 @@ def page_proyects():
         st.divider()
         
     # ---- University projects ----
-    with tab3:
+    with tab4:
         
         # Orange Telcom ---- 
         st.markdown(constant.projects['OrangeTelcom'])
