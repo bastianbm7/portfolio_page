@@ -79,7 +79,7 @@ def sidebar():
     linkedin_url = "https://www.linkedin.com/in/bastianbarrazam/"
     github_url = "https://github.com/bastianbm7"
     email_url = f"mailto:bastian.bm712@gmail.com"
-    upwork_url = "https://www.upwork.com/freelancers/~0128df4abb007f7859"
+    upwork_url = "https://www.upwork.com/freelancers/bastianb"
     with st.container():
         
         col1, col2, col3, col4 = st.columns([0.4,0.4,0.4,1])
